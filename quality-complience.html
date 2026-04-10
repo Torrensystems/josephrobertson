@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quality & Compliance</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { margin:0; font-family:Arial; background:#f4f1ed; }
+
+/* HEADER SAME */
+header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background:#fff; border-bottom:1px solid #eee; }
+
+.brand { display:flex; align-items:center; gap:12px; }
+.brand img { height:60px; }
+.brand span { font-weight:bold; color:#6e1f2a; font-size:20px; }
+
+.header-right { display:flex; flex-direction:column; align-items:flex-end; }
+.weather { font-size:14px; color:#6e1f2a; font-weight:bold; }
+
+.main-nav { display:flex; align-items:center; }
+.main-nav a, .dropdown-toggle { margin-left:25px; text-decoration:none; color:#6e1f2a; font-weight:bold; }
+
+.dropdown { position:relative; }
+.dropdown-menu { display:none; position:absolute; top:35px; left:25px; background:#fff; border:1px solid #ddd; border-radius:10px; }
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu a { display:block; padding:12px 16px; }
+
+.section { padding:60px; max-width:1000px; margin:auto; }
+.box { background:#fff; padding:30px; border-radius:12px; margin-bottom:20px; }
+h1 { text-align:center; margin-bottom:40px; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <img src="logo-red.jpg">
+    <span>Joseph Robertson</span>
+  </div>
+
+  <div class="header-right">
+    <div id="weather" class="weather">Loading weather...</div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="our-heritage.html">Timeline</a>
+      <a href="products.html">Core Competencies</a>
+         <a href="sustainability.html">Sustainability</a>
+         <a href="contact.html">Contact</a>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle">Sustainability</button>
+        <div class="dropdown-menu">
+          <a href="sustainability.html">Overview</a>
+          <a href="responsible-sourcing.html">Responsible Sourcing</a>
+          <a href="environment.html">Environment</a>
+          <a href="people-community.html">People & Community</a>
+          <a href="quality-compliance.html">Quality & Compliance</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="section">
+  <h1>Quality & Compliance</h1>
+
+  <div class="box">
+    <p>Quality and compliance are fundamental to everything we do.</p>
+  </div>
+
+  <div class="box">
+    <h2>Food Safety</h2>
+    <p>We maintain strict food safety standards across all operations.</p>
+  </div>
+
+  <div class="box">
+    <h2>Consistency</h2>
+    <p>We focus on delivering consistent, reliable products every time.</p>
+  </div>
+
+</div>
+
+<script>
+fetch("https://api.open-meteo.com/v1/forecast?latitude=57.1497&longitude=-2.0943&current=temperature_2m")
+.then(res=>res.json())
+.then(data=>{
+  document.getElementById("weather").innerText =
+    `Aberdeen ${Math.round(data.current.temperature_2m)}°C`;
+});
+</script>
+
+</body>
+</html>

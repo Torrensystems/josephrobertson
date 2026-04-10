@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Joseph Robertson</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Bodoni 72", sans-serif;
+  background: #f7f7f7;
+  color: #111;
+}
+
+header {
+  background: #ffffff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+.brand span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6e1f2a;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #b30000;
+}
+
+.contact-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header span {
+  color: #b30000;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.contact-header h1 {
+  margin: 10px 0;
+  font-size: 36px;
+}
+
+.contact-header p {
+  color: #555;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+textarea {
+  grid-column: span 2;
+  height: 120px;
+  resize: vertical;
+}
+
+button {
+  grid-column: span 2;
+  padding: 16px;
+  background: #b30000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #8f0000;
+}
+
+@media(max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    margin: 8px 10px;
+    display: inline-block;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  textarea, button {
+    grid-column: span 1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <a href="index.html" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+        <img src="logo-red.jpg" alt="Joseph Robertson Logo" class="logo">
+        <span>Joseph Robertson</span>
+      </a>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="our-heritage.html">The Robertson Story</a>
+      <a href="products.html">Core Competencies</a>
+       <a href="sustainability.html">Sustainability</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="contact-section">
+
+  <div class="contact-header">
+    <span>ENQUIRIES</span>
+    <h1>Get in Touch</h1>
+    <p>Complete the form below and we’ll come back to you as soon as possible.</p>
+  </div>
+
+  <form action="mailto:joe.robertson@josephrobertson.co.uk" method="POST" enctype="text/plain">
+
+    <input type="text" name="Name" placeholder="Name" required>
+    <input type="text" name="Company" placeholder="Company">
+
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="tel" name="Phone" placeholder="Phone">
+
+    <select name="Enquiry Type" required>
+      <option value="">Select enquiry type</option>
+      <option>General Enquiry</option>
+      <option>Retail Opportunities</option>
+      <option>Food Service</option>
+      <option>Export</option>
+    </select>
+
+    <input type="text" name="Preferred Meeting Time" placeholder="Preferred Meeting Time (Optional)">
+
+    <textarea name="Message" placeholder="Let us know what you'd like to discuss." required></textarea>
+
+    <button type="submit">Send Enquiry</button>
+
+  </form>
+
+</section>
+
+</body>
+</footer> Joseph Robertson Limited all rights reserved 2026. Website by Torren Systems.
